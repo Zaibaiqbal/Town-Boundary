@@ -10,3 +10,5 @@ Route::get('/user', function (Request $request) {
 
 
 Route::get('gettownlist',[\App\Http\Controllers\TownController::class,'getTownList']);
+
+Route::get('gettownsnamelist',[\App\Http\Controllers\TownController::class,'getTownsNameList']);
