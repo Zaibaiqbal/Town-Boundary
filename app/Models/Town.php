@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class Town extends Model
 {
     use HasFactory;
-    protected $table = 'mun_code_town_code';
+    protected $table = 'mun_code_town_code_WG';
 
 
     public function getTownList()
