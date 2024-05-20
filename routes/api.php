@@ -10,10 +10,10 @@ Route::get('/user', function (Request $request) {
 })->middleware('auth:sanctum');
 
 
-Route::get('gettownlist',[\App\Http\Controllers\TownController::class,'getTownList']);
+// Route::get('gettownlist',[\App\Http\Controllers\TownController::class,'getTownList']);
 
 
-Route::get('/town_boundaries', [TownController::class, 'getTownBoundaries']);
+Route::get('town_boundaries', [TownController::class, 'getTownBoundaries']);
 
 
 Route::get('gettownsnamelist',[\App\Http\Controllers\TownController::class,'getTownsNameList']);

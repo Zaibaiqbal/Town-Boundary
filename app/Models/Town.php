@@ -8,11 +8,19 @@ use Illuminate\Database\Eloquent\Model;
 class Town extends Model
 {
     use HasFactory;
-    protected $table = 'mun_code_town_code_WG';
+    protected $table = 'mun_code_town_code';
 
 
     public function getTownList()
     {
-        return Town::get();
+
+        return Town::select([
+            'id', 
+            'county', 
+            'name', 
+            'town_code', 
+            \DB::raw("ST_AsGeoJSON(ST_Transform(geom, 4326)) AS st_asgeojson")
+        ])
+        ->get();
     }
 }

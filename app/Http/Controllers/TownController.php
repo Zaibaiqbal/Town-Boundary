@@ -33,15 +33,8 @@ class TownController extends Controller
     {
         try {
             // Fetch town boundaries from the database
-            $townBoundaries = Town::select([
-                    'id', 
-                    'county', 
-                    'name', 
-                    'town_code', 
-                    \DB::raw("ST_AsGeoJSON(ST_Transform(geom, 4326)) AS st_asgeojson")
-                ])
-                ->limit(200)
-                ->get();
+            $town = new Town;
+            $townBoundaries = $town->getTownList();
 
             // Send the town boundaries as JSON response
             return response()->json($townBoundaries, 200);
