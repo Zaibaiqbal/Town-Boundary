@@ -93,7 +93,7 @@ export default {
 
     const fetchData = async () => {
       try {
-        const response = await fetch('http://127.0.0.1/api/town_boundaries');
+        const response = await fetch('http://127.0.0.1:8000/api/town_boundaries');
         const data = await response.json();
         polygons.value = data.map((item) => ({
           type: 'FeatureCollection',
@@ -113,7 +113,7 @@ export default {
 
     const fetchTownNames = async () => {
       try {
-        const response = await fetch('http://127.0.0.1/api/gettownsnamelist');
+        const response = await fetch('http://127.0.0.1:8000/api/gettownsnamelist');
         const data = await response.json();
         townNames.value = data.town_name_list;
       } catch (error) {
