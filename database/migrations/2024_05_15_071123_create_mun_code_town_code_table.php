@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('mun_code_town_code', function (Blueprint $table) {
             $table->id();
-            $table->multiPolygon('geom');
+            $table->geometry('geom');
             $table->integer('fid')->nullable();
             $table->integer('objectid')->nullable();
             $table->string('county');
