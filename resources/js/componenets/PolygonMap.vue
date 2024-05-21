@@ -50,9 +50,10 @@
 </template>
 
 <script>
-import { ref, onMounted, reactive } from 'vue';
-import {LMap, LTileLayer, LGeoJson} from 'vue3-leaflet';
-import 'proj4leaflet';
+import { onMounted, ref, reactive } from 'vue';
+import { LMap, LTileLayer, LGeoJson } from 'vue3-leaflet';
+import 'leaflet/dist/leaflet.css';
+import * as L from 'leaflet';
 import * as turf from '@turf/turf';
 
 export default {
